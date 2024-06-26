@@ -82,6 +82,15 @@ public class Main {
         aThread.start();
         bThread.start();
         cThread.start();
+
+        try {
+            mainGenerator.join();
+            aThread.join();
+            bThread.join();
+            cThread.join();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
     }
 
 
